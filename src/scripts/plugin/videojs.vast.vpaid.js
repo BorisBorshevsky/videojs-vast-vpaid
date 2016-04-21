@@ -50,7 +50,7 @@ module.exports = function VASTPlugin(options) {
 
   var settings = utilities.extend({}, defaultOpts, options || {});
 
-  if(utilities.isUndefined(settings.adTagUrl) && utilities.isDefined(settings.url)){
+  if (utilities.isUndefined(settings.adTagUrl) && utilities.isDefined(settings.url)) {
     settings.adTagUrl = settings.url;
   }
 
@@ -171,10 +171,10 @@ module.exports = function VASTPlugin(options) {
         player.pause();
         addSpinnerIcon();
 
-        if(player.paused()) {
+        if (player.paused()) {
           next(null);
         } else {
-          playerUtils.once(player, ['playing'], function() {
+          playerUtils.once(player, ['playing'], function () {
             player.pause();
             next(null);
           });
